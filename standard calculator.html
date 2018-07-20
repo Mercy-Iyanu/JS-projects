@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple calculator</title>
+	<script type="text/javascript">
+		var val1;
+		var oper;
+		var val2;
+		var state = false;
+
+		function button1(x){
+			if(state){
+				if(s.value == "0"){
+					s.value = x;
+				}
+				else{
+					s.value += x;
+				}
+			}
+		}
+		function operator(y){
+			val1 = parseInt(s.value);
+			s.value = "";
+			oper = y;
+		}
+		function equals(){
+			val2 = parseInt(s.value);
+
+			if (oper=="+") {
+				s.value = parseInt(val1) + parseInt(val2);
+			}
+			else if (oper=="-") {
+				s.value = parseInt(val1) - parseInt(val2);
+			}
+			else if (oper=="*") {
+				s.value = parseInt(val1) * parseInt(val2);
+			}
+			else if (oper=="/") {
+				s.value = parseInt(val1) / parseInt(val2);
+			}
+			else if (oper=="^") {
+				s.value = parseInt(val1) ^ parseInt(val2);
+			}
+		}
+		function onoff(){
+			if (toggle.value == "F") {
+				toggle.value = "N";
+				s.value = "";
+				state = false;
+			}
+			else {
+				toggle.value = "F";
+				s.value = "0";
+				state = true;
+			}
+		}
+		function del(){
+		var d = s.value.length;
+		s.value = s.value.slice(0,d-1);
+	}
+	</script>
+	<style type="text/css">
+
+		table{
+			width: 20%;
+			height: 300px;
+		}
+		input[type=button]{
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			font-size: 1.2em;
+		}
+		#s{
+			height:50px;
+			width: 99%;
+			font-size: 1.5em;
+			text-align: right;
+			border:0px;
+		}
+	</style>
+</head>
+<body>
+		<table cellpadding="0" cellspacing="0">
+				<tr><td colspan="4"><input type="text" id="s" /></td></tr>
+			<tr>
+				<td><input type="button" value=":"/></td>
+				<td><input type="button" value="&radic;"/></td>
+				<td><input type="button" value="x"/></td>
+				<td><input type="button" value="1" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="N" id="toggle" onclick="onoff()"/></td>
+				<td><input type="button" value="C"/></td>
+				<td><input type="button" value="&larr;" onclick="del()" /></td>
+				<td><input type="button" value="/" onclick="operator('/')"/></td>
+			</tr>
+			
+			<tr>
+				<td><input type="button" value="7" onclick="button1('7')" /></td>
+				<td><input type="button" value="8" onclick="button1('8')" /></td>
+				<td><input type="button" value="9" onclick="button1('9')" /></td>
+				<td><input type="button" value="*" onclick="operator('*')" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" onclick="button1('4')" /></td>
+				<td><input type="button" value="5" onclick="button1('5')" /></td>
+				<td><input type="button" value="6" onclick="button1('6')" /></td>
+				<td><input type="button" value="-" onclick="operator('-')" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" onclick="button1('1')" /></td>
+				<td><input type="button" value="2" onclick="button1('2')" /></td>
+				<td><input type="button" value="3" onclick="button1('3')" /></td>
+				<td><input type="button" value="+" onclick="operator('+')" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="&plusmn;"  onclick="plusmn()" /></td>
+				<td><input type="button" value="0" onclick="button1('0')"/></td>
+				<td><input type="button" value="." onclick="button1('.')" /></td>
+				<td><input type="button" value="=" onclick="equals()" /></td>
+			</tr>
+			
+		</table>
+</body>
+</html>

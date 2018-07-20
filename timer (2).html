@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A simple timer</title>
+<script type="text/javascript">
+	var r = new Audio("sound/ff.mp3");
+
+	function timeCount(){
+
+		if(sec.value<10){
+			min.innerHTML = mnt.value + ":0" + sec.value;
+		}
+		else{
+			min.innerHTML = mnt.value + ":" + sec.value;
+		}
+		sec.value--;
+
+		if(sec.value<0){
+			if(mnt.value==0){
+				mnt.value=0;
+				sec.value=0;
+			}
+			else{
+				mnt.value--;
+				sec.value=59;
+			}
+			if(mnt.value == 0 && sec.value == 0){
+				r.play();
+			}
+		}
+		setTimeout("timeCount()",1000);
+
+		// s--;
+		// if(s<0){
+		// 	if(m==0){
+		// 		m=0;
+		// 		s=0;
+		// 	}
+		// 	else{
+		// 		m--;
+		// 		s=59;
+		// 	}
+		// }
+		// if(s<10){
+		// 	min.innerHTML = "<h1>"+m+":0"+s+"</h1>";
+		// }
+		// else{
+		// 	min.innerHTML = "<h1>"+m+":"+s+"</h1>";
+		// }
+		// setTimeout("timeCount()",1000);
+	}
+</script>
+
+</head>
+
+<body>
+
+<center>
+	<div style="background-color:teal; width:40%; height:40px; color:white;"> 
+		<h1 id="min">0:0</h1>
+	</div> <br/>
+	<div>
+		M:&nbsp;<input type="text" id="mnt" style="width:15%; height:30px; font-size:1.5em;"/> 
+		S:&nbsp;<input type="text" id="sec" style="width:15%; height:30px; font-size:1.5em;"/>
+	</div> <br/>
+	<div>
+		<button onclick="timeCount()" style="width:20%; height:40px; border:2px solid teal; font-size:1.0em; background:transparent;">START</button>
+	</div>
+</center>
+
+</body>
+</html>

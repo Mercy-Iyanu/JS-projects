@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scientific Calculator</title>
+
+	<style>
+		textarea, #sds{
+			width: 99%;
+			height: 70px;
+			text-align: right;
+			border-radius: 8px;
+			font-size: 2.5em;
+			resize: none;
+		}
+		.btn{
+			width: 100px;
+			height: 50px;
+			text-align: center;
+			font-size: 1.0em;
+		}
+	</style>
+</head>
+<body >
+
+	<table cellspacing="0px" cellpadding="0px">
+		<tr>
+			<td colspan="5"><textarea id="bds"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:center;"><input type="radio" value="rad" name="t" onclick="rd()" />RAD</td>
+			<td colspan="2" style="text-align:center;"><input type="radio" value="deg" name="t" onclick="dg()" />DEG</td>
+		</tr>
+		<tr>
+			<td><button class="btn" onclick="sqr()">x<sup>2</sup></button></td>
+			<td><button class="btn" onclick="pow()">x<sup>y</sup></button></td>
+			<td><button class="btn" onclick="sin()">sin</button></td>
+			<td><button class="btn" onclick="cos()">cos</button></td>
+			<td><button class="btn" onclick="tan()">tan</button></td>
+		</tr>
+		<tr>
+			<td><button class="btn" onclick="root()">&radic;</button></td>
+			<td><button class="btn" onclick="ten()">10<sup>x</sup></button></td>
+			<td><button class="btn" onclick="logg()">log</button></td>
+			<td><button class="btn" onclick="expo()">Exp</button></td>
+			<td><button class="btn" onclick="modu()">Mod</button></td>
+		</tr>
+		<tr>
+			<td><button class="btn">&uArr;</button></td>
+			<td><button class="btn" onclick="clr()">CE</button></td>
+			<td><button class="btn" id="toggle" onclick="powerOn()">ON</button></td>
+			<td><button class="btn" onclick="back()">&larr;</button></td>
+			<td><button class="btn" onclick="signs('/')">/</button></td>
+		</tr>
+		<tr>
+			<td><button class="btn" onclick="pi()">&pi;</button></td>
+			<td><button class="btn" onclick="btn('7')">7</button></td>
+			<td><button class="btn" onclick="btn('8')">8</button></td>
+			<td><button class="btn" onclick="btn('9')">9</button></td>
+			<td><button class="btn" onclick="signs('X')">X</button></td>
+		</tr>
+		<tr>
+			<td><button class="btn">n!</button></td>
+			<td><button class="btn" onclick="btn('4')">4</button></td>
+			<td><button class="btn" onclick="btn('5')">5</button></td>
+			<td><button class="btn" onclick="btn('6')">6</button></td>
+			<td><button class="btn" onclick="signs('-')">-</button></td>
+		</tr>
+		<tr>
+			<td><button class="btn">&#177;</button></td>
+			<td><button class="btn" onclick="btn('1')">1</button></td>
+			<td><button class="btn" onclick="btn('2')">2</button></td>
+			<td><button class="btn" onclick="btn('3')">3</button></td>
+			<td><button class="btn" onclick="signs('+')">+</button></td>
+		</tr>
+		<tr>
+			<td><button class="btn">(</button></td>
+			<td><button class="btn">)</button></td>
+			<td><button class="btn" onclick="btn('0')">0</button></td>
+			<td><button class="btn">&dot;</button></td>
+			<td><button class="btn" onclick="ans()">&equals;</button></td>
+		</tr>
+	</table>
+
+</body>
+<script>
+	var v1;
+	var v2;
+	var signs;
+	var state = false;
+
+	function btn(n){
+		// bds.value = "";//I tried to eliminate the concat of zero here.
+		if(state){
+			if(bds.value == "0"){
+				bds.value = n;
+			}
+			else{
+				bds.value += n;
+			}
+		}
+	}
+	function back(){
+		var del = bds.value.length;
+		bds.value = bds.value.slice(0,del-1);
+	}
+	function clr(){
+		bds.value = "0";
+	}
+	function signs(m){
+		v1 = parseInt(bds.value);
+		bds.value = "";
+		signs = m;
+	}
+	function powerOn(){
+			if (toggle.value == "OFF") {
+				toggle.value = "ON";
+				bds.value = "";
+				state = false;
+			}
+			else {
+				toggle.value = "OFF";
+				bds.value = "0";
+				state = true;
+			}
+		}
+	function ans(){
+		v2 = parseInt(bds.value);
+		if(signs=='+'){
+			bds.value = parseInt(v1) + parseInt(v2);
+		}
+		else if(signs=='-'){
+			bds.value = parseInt(v1) - parseInt(v2);
+		}
+		else if(signs=='X'){
+			bds.value = parseInt(v1) * parseInt(v2);
+		}
+		else if(signs=='/'){
+			bds.value = parseInt(v1) / parseInt(v2);
+		}
+	}
+	function pi(){
+		bds.value = Math.PI;
+	}
+	function root(){
+		bds.value = Math.sqrt(bds.value);
+	}
+	function logg(){
+		bds.value = Math.log(bds.value);
+	}
+	function expo(){
+		bds.value = Math.exp(bds.value);
+	}
+	// function pow(){
+	// 	bds.value = Math.pow(v1,v2);
+	// }
+	// function modu(){
+	// 	bds.value = Math.MOD(bds.value);
+	// }
+	function sqr(){
+		bds.value = Math.pow(bds.value,2);
+	}
+	function ten(){
+		bds.value = Math.pow(10,bds.value);
+	}
+	function rd(){
+		alert("You are on Radians mode.");
+		function sin(){
+			bds.value = Math.sin(bds.value);
+		}
+		function cos(){
+			bds.value = Math.cos(bds.value);
+		}
+		function tan(){
+			bds.value = Math.tan(bds.value);
+		}
+	}
+	function dg(){
+		alert("You are on Degrees mode.");
+		function sin(){
+			bds.value = Math.sin(180/bds.value);
+		}
+		function cos(){
+			bds.value = Math.cos(180/bds.value);
+		}
+		function tan(){
+			bds.value = Math.tan(180/bds.value);
+		}
+	}
+</script>
+</html>

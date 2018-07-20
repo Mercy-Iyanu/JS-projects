@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stopwatch</title>
+	<script type="text/javascript">
+		var h = 0;
+		var m = 0;
+		var s = 0;
+
+		function start(){
+			s++;
+			if(s==59){
+				m++;
+				s=0;
+				s++;
+				if(m==59){
+					h++;
+					m=0;
+					m++;
+				}
+
+			}
+			if(s<10 && m<10){
+			time.innerHTML = "<h3>"+h+":0"+m+":0"+s+"</h3>";
+			}
+			else{
+			time.innerHTML = "<h3>"+h+":"+m+":"+s+"</h3>";	
+			}
+			clr = setTimeout("start()",1000);
+		}
+		function stop(){
+			clearTimeout(clr);
+		}
+		function reset(){
+
+		}
+
+	</script>
+	<style type="text/css">
+		.btn{
+			width: 10%;
+			height: 5vh;
+			background:transparent;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<div>
+			<h2 style="color:#eb8a3e;">THIS IS A STOPWATCH SYSTEM</h2>
+		</div>
+		<div id="time" style="width:20%; height:40px; border:1px solid #d24136; padding-bottom:20px;">
+			<h3></h3>
+			
+		</div> <br/>
+		<div>
+			<button onclick="start()" class="btn">START</button>
+			<button onclick="stop()" class="btn">STOP</button>
+			<button onclick="reset()" class="btn">RESET</button>
+		</div>
+	</center>
+</body>
+</html>

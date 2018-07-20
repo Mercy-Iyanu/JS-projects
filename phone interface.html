@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>phone</title>
+	<style type="text/css">
+		div#container{
+			border:1px solid #000;
+			width: 16%;
+			height: 400px;
+			border-radius: 5px;
+			background-color: teal;
+		}
+		#scrn{
+			border:1px solid #ccc;
+			height: 180px;
+			border-radius: 7px;
+			box-shadow: 0 0 2px white;
+			background-color: white;
+			max-width: 100%;
+			overflow: auto;
+			word-break: break-all;
+			word-wrap: break-word;
+		}
+		table{
+			width: 100%;
+			height: 230px;
+		}
+		input{
+			width: 100%;
+			height: 100%;
+			border-radius: 5px;
+			background-color: white;
+			font-size: 1.1em;
+
+		}
+	</style>
+	<script type="text/javascript">
+		var face[
+		["1.Account Information <br> 2.Tariff Plan Migration <br> 3.Data Services<br> 4.Roaming & Intl Offers <br> 5.My Services <br> 6.ExtraTime <br> 7.More..<br> Enter 1,2,3...7 to proceed"],
+		["My Tools <br> 1.My Number <br> 2.My tariff plan <br> 3.My Account balance <br> 4.My Data Balance <br> 5.End of call Message <br> 0.Back <br> 00.Main Menu","1.BetaTalk<br> 2.Pulse<br> 3.Xtraspecial<br> 4.XtraValue<br> 0.Back<br> 00.Main menu","1.Buy Data Plans<br> 2.Buy XtraValue Bundle<br> 3.Buy Goody Bags<br> 4.Check Balance<br> 5.Roaming & Int'l Offers<br> 6.Xtratime/Byte<br> 7.Data Gift<br> 8.YouTube Packs","1.HelloWorld Roaming Offer<br> 2.SuperRoamer (Free incoming roaming)<br> 3.Int'l Calling Bundle <br> 0.Back","Welcome to the MTN Content Services Menu <br> Reply with a number to manage your <br> 1.Active services<br> 2.New services<br> 3.Unconfirmed services","Y'ello. You will be able to borrow airtime/data when<br> you recharge at least 100 NGN monthly for 3 <br>months. Thank you.","1.Mobile Newspaper Service<br> 2.ShareAndSell<br> 3.Okada Books <br> 4.More...<br> 0.Back<br> 00.MainMenu"]
+		];
+		var x = "call";
+
+		function butn(x){
+			scrn.innerHTML += x; 
+		}
+		function bck(){
+			scrn.innerHTML = ""/*scrn.innerHTML.length--*/;
+		}
+		function send(){
+			
+
+			// if (scrn.innerHTML == "*123#"){
+			// 	scrn.innerHTML = 
+			// "1.Account Information <br> 2.Tariff Plan Migration <br> 3.Data Services<br> 4.Roaming & Intl Offers <br> 5.My Services <br> 6.ExtraTime <br> 7.More..<br> Enter 1,2,3...7 to proceed";
+			// 	}
+			// else if (scrn.innerHTML == "1") {
+			// 		scrn.innerHTML =
+			// "1.My Number <br> 2.My tariff plan <br> 3.My Account balance <br> 4.My Data Balance <br> 5.End of call Message <br> 0.Back <br> 00.Main Menu"		
+			// 	}
+			// else if (scrn.innerHTML == "2"){
+			// 	scrn.innerHTML = 
+			// "1.BetaTalk <br> 2.Pulse <br> 3.Xtraspecial <br> 4.XtraValue <br> 0.Back <br> 00.Main menu"	
+			// }
+			// else if (scrn.innerHTML == "3"){
+			// 	scrn.innerHTML =
+			// 	"1.Buy Data Plan <br> 2.Buy XtraValue Bundle <br> 3.Buy Goody Bags <br> 4.Check Balance <br> 5.Roaming & Int'l Offers <br> 6.Xtratime/Byte <br> 7.Data Gift <br> 8.YouTube Packs"
+			// }	
+			// else if (scrn.innerHTML == "4"){
+			// 	scrn.innerHTML =
+			// 	"1.HelloWorld Roaming Offer <br> 2.SuperRoamer (Free incoming roaming) <br> 3.Int'l Calling Bundle <br> 0. Back"
+			// }
+			// else if (scrn.innerHTML == "5"){
+			// 	scrn.innerHTML =
+			// 	"Welcome to the MTN Content Services Menu <br> Reply with a number to manage your <br> 1.Active services <br> 2.New services <br> 3.Unconfirmed services"
+			// }
+			// else if (scrn.innerHTML == "6"){
+			// 	scrn.innerHTML =
+			// 	"Y'ello. You will be able to borrow airtime/data when you recharge at least 100 NGN monthly for 3 months. Thank you. <br> 1:Eligibility Status <br> 9:Next "
+			// }
+			// else if (scrn.innerHTML == "7"){
+			// 	scrn.innerHTML =
+			// 	"1.Mobile Newspaper Service <br> 2.ShareAndSell <br> 3.Okada Books <br> 4.More.. <br> 0.Back <br> 00.MainMenu"
+			// }
+			
+		}
+	</script>
+</head>
+<body>
+		<div id="container">
+			
+			<table >
+				<tr>
+					<td colspan="3" id="scrn"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="" onclick="bck()"></td>
+					<td rowspan="2"><input type="button" value=""></td>
+					<td><input type="button" value=""></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="" onclick="send()"></td>
+					<td><input type="button" value=""></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="1" onclick="butn('1')"></td>
+					<td><input type="button" value="2" onclick="butn('2')"></td>
+					<td><input type="button" value="3" onclick="butn('3')"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="4" onclick="butn('4')"></td>
+					<td><input type="button" value="5" onclick="butn('5')"></td>
+					<td><input type="button" value="6" onclick="butn('6')"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="7" onclick="butn('7')"></td>
+					<td><input type="button" value="8" onclick="butn('8')"></td>
+					<td><input type="button" value="9" onclick="butn('9')"></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="*" onclick="butn('*')"></td>
+					<td><input type="button" value="0" onclick="butn('0')"></td>
+					<td><input type="button" value="#" onclick="butn('#')"></td>
+				</tr>
+			</table>
+		</div>
+</body>
+</html>

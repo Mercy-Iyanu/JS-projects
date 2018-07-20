@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		 function butn(){
+		// for(x=1;x<=3;x++){
+		// alert("Good morning " + nme.value + x );
+		// 	}
+		var result;
+		var a = block.value;
+		var b = lines.value;
+		var c = strt.value;
+		for(x=1; x<=a; x++)
+			{
+				document.write(x + "times"  + "table"  + "<br>");
+			for(i=1; i<=b; i++)
+				{
+				result = x * i;	
+				document.write(x + "X" + i + "=" + result + "<br>");
+				}
+			}
+		 }
+
+	</script>
+</head>
+<body>
+		<table>
+			<tr>
+				<td>Block:<input type="text" id="block" ></td>
+				<td><input type="button" value="Answer" onclick="butn()" /></td>
+			</tr>
+			<tr>
+				<td>Lines:<input type="text" id="lines"></td>
+			</tr>
+			<tr>
+				<td>Start From:<input type="text" id="strt"></td>
+			</tr>
+		</table>
+</body>
+</html>

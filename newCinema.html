@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cinema Ticketing</title>
+	<script type="text/javascript">
+		
+
+		var seats=[];
+		var rowFull = false;
+
+		function arrangeSeat() 
+		{
+		  var a =0;
+		  var outside;
+		  var x = no.value;
+		  outside = "<table border=2 align=center bgcolor=pink><tr>";
+		  for (i=0; i<x; i++)
+		  {
+		  	outside += "<td id='t1'>"+"<img src='CinemaChairs/agac.jpg' width=100>"+"<br>"+seats[i]+"</td>";
+		  	a++;
+		  	if(a==5)
+		  	{		  		
+		  		rowFull = true;
+		  		a=0;
+		  	}
+		if(rowFull)
+		   {
+		   	outside+= "</tr><tr>";
+		   	rowFull=false;
+
+		   }
+
+		  }
+		  outside += "</tr></table>";
+		  box1.innerHTML = outside;
+		}
+
+		function allocateSeat()
+		{
+			// var n = num.value;
+		 //    var y = n--;
+			// seats[n]= viewers_name.value;
+			var n = num.value;
+			n--;
+			if(seats[n.value] != ""){
+				alert("Seat already taken!");
+			}
+			else{
+				seats[n] = viewers_name.value;
+			}
+			var m = seats[n];
+			//if( t1.value= seats[i])
+			//{
+				//alert('hi');
+			arrangeSeat();
+			viewers_name.value = '';
+			viewers_name.focus(); 
+		//}
+		// else (t1.value= m)
+		// {
+		// 	alert("Seat Occupied");
+		// }
+
+		
+		 }
+	</script>
+</head>
+<td></td></table>
+<body>
+<div id="box1">
+	
+</div>
+<br>
+<input type="text" id="no">
+<button onclick="arrangeSeat()">Arrange Seat</button>
+<br>
+<br>
+ Seat Number<input type="text" id="num">
+ <br>
+ <br>
+ Viewer's name<input type="text" id="viewers_name">
+ <br>
+ <br>
+<button onclick="allocateSeat()">Allocate Seat</button>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Admission Checker </title>
+	<script>
+		function officer()
+		{
+			if(r1.value<=6 && r2.value<=6 && r3.value<=6 && r4.value<=6 && r5.value<=6 && js.value>=180)
+				{
+					alert("admission granted");
+				}
+			else
+				{
+					alert("admission not granted");
+				}
+
+		}
+
+	</script>
+</head>
+<body>
+	<table bgcolor="rgb(50,50,70)"  
+		<tr bgcolor="rgb(24,12,90)">
+			<td colspan="2" align="center"> Admission Checker </td>
+		</tr>
+		<tr>
+			<td><select id="s1"><option value="English">English</option> 
+								<option value="Biology">Biology</option>
+								<option value="Chemistry">Chemistry</option>
+								<option value="Mathematics">Mathematics</option>
+								<option value="Physics">Physics</option>
+				</select>
+			</td>
+
+			<td><select id="r1"><option value="1">A1</option>
+								<option value="2">B2</option>
+								<option value="3">B3</option>
+								<option value="4">C4</option>
+								<option value="5">C5</option>
+								<option value="6">C6</option>
+								<option value="7">D7</option>
+								<option value="8">E8</option>
+								<option value="9">F9</option>
+				</select>
+				</td>
+		</tr>
+
+		<tr>
+			<td><select id="s2"><option value="English">English</option> 
+								<option value="Biology">Biology</option>
+								<option value="Chemistry">Chemistry</option>
+								<option value="Mathematics">Mathematics</option>
+								<option value="Physics">Physics</option>
+				</select>
+			</td>
+
+			<td><select id="r2"><option value="1">A1</option>
+								<option value="2">B2</option>
+								<option value="3">B3</option>
+								<option value="4">C4</option>
+								<option value="5">C5</option>
+								<option value="6">C6</option>
+								<option value="7">D7</option>
+								<option value="8">E8</option>
+								<option value="9">F9</option>
+				</select>
+				</td>
+		</tr>
+
+
+<tr>
+			<td><select id="s3"><option value="English">English</option> 
+								<option value="Biology">Biology</option>
+								<option value="Chemistry">Chemistry</option>
+								<option value="Mathematics">Mathematics</option>
+								<option value="Physics">Physics</option>
+				</select>
+			</td>
+
+			<td><select id="r3"><option value="1">A1</option>
+								<option value="2">B2</option>
+								<option value="3">B3</option>
+								<option value="4">C4</option>
+								<option value="5">C5</option>
+								<option value="6">C6</option>
+								<option value="7">D7</option>
+								<option value="8">E8</option>
+								<option value="9">F9</option>
+				</select>
+				</td>
+		</tr>
+
+
+<tr>
+			<td><select id="s4"><option value="English">English</option> 
+								<option value="Biology">Biology</option>
+								<option value="Chemistry">Chemistry</option>
+								<option value="Mathematics">Mathematics</option>
+								<option value="Physics">Physics</option>
+				</select>
+			</td>
+
+			<td><select id="r4"><option value="1">A1</option>
+								<option value="2">B2</option>
+								<option value="3">B3</option>
+								<option value="4">C4</option>
+								<option value="5">C5</option>
+								<option value="6">C6</option>
+								<option value="7">D7</option>
+								<option value="8">E8</option>
+								<option value="9">F9</option>
+				</select>
+				</td>
+		</tr>
+
+
+<tr>
+			<td><select id="s5"><option value="English">English</option> 
+								<option value="Biology">Biology</option>
+								<option value="Chemistry">Chemistry</option>
+								<option value="Mathematics">Mathematics</option>
+								<option value="Physics">Physics</option>
+				</select>
+			</td>
+
+			<td><select id="r5"><option value="1">A1</option>
+								<option value="2">B2</option>
+								<option value="3">B3</option>
+								<option value="4">C4</option>
+								<option value="5">C5</option>
+								<option value="6">C6</option>
+								<option value="7">D7</option>
+								<option value="8">E8</option>
+								<option value="9">F9</option>
+				</select>
+				</td>
+		</tr>
+
+	<tr> <td colspan="2" align="center"> Jamb-Score: <input type="text" id="js" placeholder="Jamb score here">	</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<input type="button" value="Check Status" id="cs" onclick="officer()">
+		</td>
+	</tr>
+
+	</table>
+
+</body>
+</html>

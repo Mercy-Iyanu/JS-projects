@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp page</title>
+
+	<script type="text/javascript">
+		var oyo = "<option> Ogbomoso </option><option> Ibadan </option> <option> Irese </option>";
+		var ogun = "<option> Abeokuta </option><option> Sango </option> <option> Ayetoro </option>";
+		var osun = "<option> Osogbo </option> <option> Okuku </option> <option> Iwo </option>";
+		var rivers = "<option> Port-Harcourt </option> <option> Ekete </option>";
+
+		function select(){
+			if(s.value=="Oyo"){
+				c.innerHTML = oyo;
+			}
+			else if(s.value=="Ogun"){
+				c.innerHTML = ogun;
+			}
+			else if(s.value=="Osun"){
+				c.innerHTML = osun;
+			}
+			else if(s.value=="Rivers"){
+				c.innerHTML = rivers;
+			}
+		}
+
+		function submitt(){
+			var x = p1.value;
+			var y = p2.value;
+
+			if(p1.value!==p2.value){
+				alert("confirm your password correctly!");
+			}
+		}
+
+		var checkbox = css2.type;
+		if(css2.type>=3){
+			alert("You can only check two boxes!");
+		}
+
+		
+		
+	</script>
+
+	<style type="text/css">
+		body{
+			color: #fff;
+			font-size: 1.2em;
+			font-weight: bold;
+			font-family: helvetica;
+		}
+		div{
+			border-radius: 5px;
+			width: 65%;
+			height: 90vh;
+			background-color: #efc481;
+			text-align: center;
+		}
+		form{
+			text-align: left;
+			margin-top: 30px;
+			margin-left: 25px;
+		}
+		#css1,.css1{
+			background-color: transparent;
+			width: 60%;
+			height: 20px;
+			font-size: 1.0em;
+		}
+		#css2{
+			background-color: transparent;
+			width: 10%;
+			height: 15px;
+		}
+		.css3{
+			width: 50%;
+			height: 30px;
+			font-size: 1.0em;
+		}
+		h3{
+			font-size: 1.8em;
+			font-family: comic;
+			padding-top: 8px;
+			text-decoration: overline;
+			color:#867666;
+		}
+		button{
+			width: 20%;
+			height: 50px;
+			background-color: #343a40;
+			color: #fff;
+			font-size: 1.0em;
+			border:none;
+			margin-left: 140px;
+		}
+	</style>
+</head>
+<body>
+		<div>
+		<h3>JOB APPLICATION FORM</h3>
+		<form>
+		
+		First name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="10" placeholder="FirstName" id="css1" required="required" /> <br><br>
+		Last name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength="10" placeholder="LastName" id="css1" required="required"/> <br><br>
+		Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="someone@mail.com" id="css1" required="required"/><br><br>
+		Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" maxlength="8" placeholder="Password"  id="p1" class="css1" required="required"/> <br><br>
+		Confirm Password: &nbsp;&nbsp;&nbsp;<input type="password" maxlength="8" placeholder="ConfirmPassword" id="p2" class="css1" required="required"/> <br><br>
+		Gender: &nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="male" id="css2" />Male 
+				<input type="radio" name="sex" value="female" id="css2"/>Female <br><br>
+		Hobbies: &nbsp;&nbsp;&nbsp;<input type="checkbox" name="" id="css2"/>Swimming <input type="checkbox" name="" id="css2"/>Eating
+				<input type="checkbox" name="" id="css2"/>Slapping <input type="checkbox" name="" id="css2"/>Laughing <br> <br>
+		State: &nbsp;&nbsp;&nbsp;<select id="s" class="css3" onclick="select()">
+					<option >Choose your state...</option>
+					<option value="Osun">Osun</option>
+					<option value="Oyo">Oyo</option>
+					<option value="Ogun">Ogun</option>
+					<option value="Rivers">Rivers</option>
+				</select> <br> <br>
+		City: &nbsp;&nbsp;&nbsp;<select id="c" class="css3">
+					
+				</select> <br> <br>
+		<button type="reset" onclick="real()">Reset</button> <button type="submit" onclick="submitt()">Submit</button>
+		</form>
+		</div>
+</body>
+</html>

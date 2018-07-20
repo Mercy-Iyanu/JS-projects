@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>lapWatch</title>
+	<script type="text/javascript">
+		var h = 0;
+		var m = 0;
+		var s = 0;
+		var state= "lap1";
+		var r;
+
+		function start(){
+			s++;
+			if(s==59){
+				m++;
+				s=0;
+				s++;
+				if(m==59){
+					h++;
+					m=0;
+					m++;
+				}
+
+			}
+			
+			r=setTimeout("start()",1000);
+
+			if(s<10 && m<10 && h<10){
+			time.innerHTML =h+":0"+m+":0"+s;
+			}
+			else{
+			time.innerHTML =h+":"+m+":"+s;	
+			}
+
+			q = h+":"+m+":"+s;
+			
+		}
+
+		function lap(){
+			if (state=="lap1") {
+			lap1.value = q; state="lap2";
+			}
+			else if (state=="lap2") {
+			lap2.value = q; state="lap3";
+			}
+			else if (state=="lap3") {
+			lap3.value = q; state="lap1";
+			}
+		}
+		function stop(){
+			
+			clearTimeout(r);
+
+		}
+
+	</script>
+</head>
+<body>
+	<center>
+		<div  id="time" style="width:20%; height:40px; border-radius: 3px; border: teal; font-size:1.8em;">
+			<h1>
+				
+			</h1>
+			
+		</div> <br/>
+		<div>
+			<input type="text" placeholder="Lap 1" id="lap1" style="width:30%; height:40px; font-size:1.5em;" /><br>
+			<input type="text" placeholder="Lap 2" id="lap2" style="width:30%; height:40px; font-size:1.5em;" /><br>
+			<input type="text" placeholder="Lap 3" id="lap3" style="width:30%; height:40px; font-size:1.5em;" />
+		</div> <br/>
+		<div>
+			<button onclick="start()" style="width:10%; height:40px; background:transparent;">START</button>
+			<button onclick="stop()" style="width:10%; height:40px; background:transparent;">STOP</button>
+			<button onclick="lap()" style="width:10%; height:40px; background:transparent;">LAP</button>
+		</div>
+	</center>
+</body>
+</html>

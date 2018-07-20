@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alarm system</title>
+
+<script>
+	
+	var hold1;
+	var hold2;
+	var q = new Audio("sound/a.mp3");
+	var z;
+	var questions = [["30/3",10],["33*4",132],["56-45",11],["90+1",91],["22*5",110],["19-6",13],["12-3",9],["67+56",123],["45/3",15],["9+7",16],["34+45",79]];
+
+	function tmNow(){
+		var r = new Date();
+		var h = r.getHours();
+		var m = r.getMinutes();
+
+		if(m<10){
+			document.getElementById('dsTm').innerHTML =h + ":0" + m;
+		}
+		else{
+			document.getElementById('dsTm').innerHTML =h + ":" + m;
+		}
+		setTimeout("tmNow()",1000);
+	}
+
+	function ok(){
+		hold1 = setnow.value;
+		hold2 = dsTm.innerHTML;
+
+		if(hold1==hold2){
+			q.loop = true;
+			q.play();
+		}
+		z = setTimeout("ok()",1000);
+	}
+
+	function stp(){
+		rad = Math.floor(Math.random()*10);
+		qtn.value = questions[rad][0];
+		if(ans.value == questions[rad][1]){
+			q.pause();
+			clearTimeout(z);
+		}
+	}
+
+	function snz(){
+		hold1 = setnow.value;
+		startFrom = hold1.indexOf(":");
+        startFrom++;
+        back = hold1.substring(startFrom,5);
+        front = hold1.substring(0,hold1.indexOf(":"));
+        back = parseInt(back)+5;
+		if(back>=59){
+			front++;
+			back = 0;
+			back++;
+		}
+		if (back<10){
+			hold1 = front + ":0" + back;
+		}
+		else{
+      		hold1 = front+":"+back;
+		}
+        setnow.value = hold1;
+        q.pause();
+        ok();
+	}
+</script>
+
+</head>
+
+<body onload="tmNow()">
+
+	<center style="background-color:#ebb582; height:60vh; width:70%; padding-top:10px; font-family:fantasy;">
+
+		<div>
+			<h1 style="color:#d24136;">AN ALARM SYSTEM</h1>
+		</div>
+
+		<div  style="font-size:2.0em; width:10%; height:45px; padding-top:10px;" id="dsTm"> 
+			<h1> </h1>
+		</div> <br/>
+
+		<div >
+			<input type="text" placeholder="h:m" id="setnow" style="width:10%; height:40px; font-size:1.8em; text-align:center; background:transparent; font-family:fantasy;" />
+		</div> <br/>
+
+		<div>
+			<input type="text" id="qtn" style="width:20%; height:30px; font-size:1.2em; text-align:center; background:transparent; font-family:fantasy;"/>
+			<input type="text" id="ans" style="width:20%; height:30px; font-size:1.2em; text-align:center; background:transparent; font-family:fantasy;"/>
+		</div> <br/>
+
+		<div>
+			<button onclick="ok()" style="width:8%; height:40px; border:2px solid #785a46; font-size:1.0em; background:transparent; font-family:fantasy;">OK</button> &nbsp; &nbsp;
+			<button onclick="stp()" style="width:8%; height:40px; border:2px solid #785a46; font-size:1.0em; background:transparent; font-family:fantasy;">STOP</button> &nbsp; &nbsp;
+			<button onclick="snz()" style="width:8%; height:40px; border:2px solid #785a46; font-size:1.0em; background:transparent; font-family:fantasy;">SNOOZE</button>
+		</div>
+
+	</center>	
+
+</body>
+</html>

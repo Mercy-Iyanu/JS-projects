@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PHONE</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/font/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+	<style type="text/css">
+	#we{border: none;
+		border-bottom: 1px solid black;}
+</style>
+<script type="text/javascript">
+	var mtnvalue = [["1.Account Information <br> 2.Traiff Plan Migration <br>3.Data services <br> 4.Roaming & Int\'l Offers <br> 5.My Services <br> 6.ExtraTime <br> 7.More.. <br> Enter 1,2,3...7 to proceed"],
+	["My Tools <br> 1.My Number <br> 2.My tarrif plan <br> 3.My Account Balance <br> 4.My Data Balance <br> 5.End of call message <br> 0.Back <br> 00.Main Menu","Your mobile no is 2348104418105","1.Beta Talk <br> 2.Pulse <br> 3.Xtraspecial <br> 4.Xtravalue <br> 0.Back <br> 00.Main menu","Please dial *556# for prepaid balance & *558# for postpaid balance","Sorry,you currently have no <br> active Data Bundle.Please dial <br> *131*1# to buy a new bundle,<br> *606# to borrow data or <br> *131*200# to browse @N3/MB"],
+	["1.Beta Talk <br> 2.Pulse <br> 3.Xtraspecial <br> 4.Xtravalue <br> 0.Back <br> 00.Main menu","Enjoy 150% airtime bonuson every recharge below N100 & 250% airtime bonus on recharges from N100 & above on BetaTalk.<br> 1.Migrate to BetaTalk <br> 0.Back <br> 00.Main Menu","Enjoy youthful life on MTN pulse<br> 1.Migrate to MTN pulse <br> 2.1GB@N500(Pulse customers <br> ONLY <br> 3.Subscribe to Music+@N10 <br> 4.Night browsing @N25 <br> 5.GoodyBag Bundle","Make calls with No access fee at a flat rate of 15 kobo/sec to ALL networks in Nigeria & 18 Int'l Countries.<br> 1.Migrate to MTN Xtraspecial","This plan gives you airtime for Natl & Int'l calls plus data after subscriing to a bundle plan.<br>1.XtraTalk plans<br> 2.XtraData plans<br> 3.Eligible Int's Destinations <br> 0.Back <br> 00.Main Menu"],
+	["1.Buy Data plans <br> 2.Buy Xtravalue Bundles <br> 3.Buy Goody Bags <br> 4.Check Balance<br> 5.Roaming & Int'l Offers<br> 6.Xtratime/Byte<br> 7.Data Gift<br> 8.YouTube Packs","Buy data plans<br>1.Daily plan <br> 2.Weekly plan <br> 3.Monthly plan <br> 4.2-months plan <br> 5.3-months plan <br> 0.Back <br> 00.Main Menu","Daily plan <br> 1.50MB Daily plan;Cost 100 <br> NGN <br> 2.150MB Daily plan;Cost 200<br>NGN <br> 0.Back <br> 00.Main Menu"],
+	["1.HelloWorld Roaming offer <br> 2.SuperRoamer (Free Incoming <br> roaming) <br> 3.Int'l Calling Bundle <br> 0.Back"],
+	["Welcome to thontent Services Menu<br>Reply with a number to mange your<br> 1.Active Services <br> 2.New Services<br> 3.Unconfirmed Services"],
+	["Welcome to MTN Xtratime.<br> 1.Eligibility Status <br> 2.Request data(Xtrabyte)<br> 3.Xtracash <br> 4.Xtratime History <br> 9.Next"],
+	["1.Mobile Newspaper Service <br> 2.ShareAndSell <br> 3.Okada Books <br> 4.More... <br>0.Back <br> 00.Main Menu"]];
+    var r="mtn";
+    var firstinput="";
+    var secondinput="";
+   // var sec = 1000milliseconds;
+	function button(b)
+		{
+			if(document.getElementById('myScreen').innerHTML=='')
+			{
+				document.getElementById('myScreen').innerHTML=b;
+			}
+			else
+			{
+				document.getElementById('myScreen').innerHTML+=b;
+           
+           }
+       }
+
+       function back()
+		{
+			var len=document.getElementById('myScreen').innerHTML.length;
+			document.getElementById('myScreen').innerHTML=document.getElementById('myScreen').innerHTML.slice(0,len-1);
+		}
+     function finish()
+		{
+			document.getElementById('myScreen').innerHTML = "";
+		}
+	function call()
+	{
+     if (r=="mtn" && document.getElementById('myScreen').innerHTML=='*123#'){document.getElementById('myScreen').innerHTML=mtnvalue[0];}
+     if (r=="mtn1") {firstinput=document.getElementById('myScreen').innerHTML;
+         document.getElementById('myScreen').innerHTML=mtnvalue[firstinput][0];r="mtn2"}
+     if (r=="mtn3") {secondinput=document.getElementById('myScreen').innerHTML;
+         document.getElementById('myScreen').innerHTML=mtnvalue[firstinput][secondinput];} 
+        // else if(r=="mtn" && document.getElementById('myScreen').innerHTML == '*556#')
+        // {document.getElementById('myScreen').innerHTML = "Please wait..." sec = 3000, "uunu"}  
+	}
+	function menu()
+	{
+      if (r=="mtn") {document.getElementById('myScreen').innerHTML='';r="mtn1";}
+      if (r=="mtn2") {document.getElementById('myScreen').innerHTML='';r="mtn3";}
+	}
+</script>
+
+</head>
+<body>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<table class="table table-bordered mt-3" style="border: 7px solid black">
+					<thead style="background-color: teal; color: white;">
+						<td colspan="3" style="width: 300px;"><h3 class="text-center">N O K I A</h3>
+						</td></thead>
+
+					<tbody style="background-color:teal;">
+                 <tr>
+                 	<td colspan="3" id="myScreen" style="border: 2px solid grey; height: 250px; background-color: white;"></td>                
+                 </tr>
+<tr>
+	<td><button class="btn btn-md" onclick="menu()">-</button></td>
+	<td rowspan="2"><button class="btn btn-md mt-5">MENU</button></td>
+	<td><button class="btn btn-md" onclick="back()">Del</button></td>
+</tr>
+<tr>
+	<td><button class="btn btn-lg btn-success fa fa-call" onclick="call()">Call</button></td>
+	
+	<td><button class="btn btn-md btn-danger" onclick="finish()">END</button></td>
+</tr>
+<tr>
+	<td><button class="btn btn-md" onclick="button(1)">1 <br> ,.</button></td>
+	<td><button class="btn btn-md" onclick="button(2)">2 <br> abc</button></td>
+	<td><button class="btn btn-md" onclick="button(3)">3 <br> def</button></td>
+</tr>
+<tr>
+	<td><button class="btn btn-md" onclick="button(4)">4 <br> ghi</button></td>
+	<td><button class="btn btn-md" onclick="button(5)">5 <br> jkl</button></td>
+	<td><button class="btn btn-md" onclick="button(6)">6 <br> mno</button></td>
+</tr>
+<tr>
+	<td><button class="btn btn-md" onclick="button(7)">7 <br> pqrs</button></td>
+	<td><button class="btn btn-md" onclick="button(8)">8 <br> tuv</button></td>
+	<td><button class="btn btn-md" onclick="button(9)">9 <br> wxyz</button></td>
+</tr>
+<tr>
+	<td><button class="btn btn-lg" onclick="button('#')">#</button></td>
+	<td><button class="btn btn-lg" onclick="button(0)">0</button></td>
+	<td><button class="btn btn-lg" onclick="button('*')">*</button></td>
+</tr>
+
+
+
+                 </tbody>
+				</table>	
+			</div>	
+		</div>		
+	</div>
+   
+
+   <div class="container">
+   	<div class="row">
+   		<div class="col-md-6">
+   			<table>
+   				
+   			</table>
+   			
+   		</div>
+   		
+   	</div>
+   </div>
+	
+
+
+
+
+
+
+
+
+
+
+
+   <script type="text/javascript" src="bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

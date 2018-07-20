@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>simple calculator</title>
+	<script type="text/javascript">
+		function add(){
+			var e=val1.value;
+			var p=val2.value;
+			var rslt=parseInt(e)+parseInt(p);
+			r1.value=rslt;
+		}
+		function subtract(){
+			var e=val1.value;
+			var p=val2.value;
+			var rslt=parseInt(e)-parseInt(p);
+			r1.value=rslt;
+		}
+		function multiply(){
+			var e=val1.value;
+			var p=val2.value;
+			var rslt=parseInt(e)*parseInt(p);
+			r1.value=rslt;
+		}
+		function divide(){
+			var e=val1.value;
+			var p=val2.value;
+			r1.value=rslt;
+			try{
+				r1.value=parseInt(x)/parseInt(p);
+			}
+			catch(err){
+				var rslt = "Division by zero impossible";
+				alert(err.stack);
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		div{
+			border:solid 5px rgb(150,4,200);
+			width: 20%;
+			height: 220px;
+			text-align: center;
+			background-color: rgb(100,10,220);
+		}
+		h3{
+			color: rgb(220,4,200);
+			font-family: helvetica;
+			font-weight: bolder;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h3>SIMPLEX CALCULATOR</h3>
+		<input type="number" value="First value" placeholder="Input number here" id="val1" /> <br> <br>
+		<input type="number" value="Second value" placeholder="Input number here" id="val2"/> <br> <br>
+
+		<button onclick="add()">+</button>
+		<button onclick="subtract()">-</button>
+		<button onclick="multiply()">*</button>
+		<button onclick="divide()">/</button> <br> <br>
+
+		<input type="number" placeholder="Result here" id="r1" >
+		
+	</div>
+</body>
+</html>

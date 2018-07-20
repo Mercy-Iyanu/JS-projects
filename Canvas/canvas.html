@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+		<div>
+			<span>
+				<button onmousedown="circl()">Circle</button><br/>
+				<button onclick="sqr()">Square</button><br/>
+				<button onclick="tria()">Triangle</button><br/>
+				<button onclick="line()">Line</button>
+			</span>	
+			<canvas onmousedown="drag()"  width="400px" height="200px" id="canv" style="background-color:#fee; border:2px solid #cee;">
+			</canvas>
+		</div>
+
+	<script>
+		pencil = canv.getContext("2d");
+		// pencil.moveTo(0,50);
+		// pencil.lineTo(400,50);
+		// pencil.stroke();
+
+		var x;
+		var y;
+
+		function drag(){
+			pencil.moveTo(x,y);
+			pencil.lineTo(event.x,event.y);
+			pencil.stroke();
+		}
+		// function circl(){
+		// 	pencil.beginPath();
+		// 	pencil.arc(event.x,event.y,10,20,2*Math.PI);
+		// 	pencil.stroke();
+		// }
+	</script>	
+</body>
+</html>

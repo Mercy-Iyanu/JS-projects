@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js array</title>
+	<script type="text/javascript">
+		var names = [];
+			
+		function chck(){
+			/*for(i=0;i<names.length;i++){
+			alert(names[i]);
+			}*/
+			/*function a(){
+				console.log("Hi");
+				}
+			names.forEach(a);*/
+			if(names.length == 0){
+				alert("Names is currently empty. Please add a name.");
+			}
+			names.forEach(function(value){
+				alert(value);
+			});
+		}
+		function chck2(){
+			
+			names.push(newName.value);
+			alert(newName.value + " added.");
+		}
+	</script>
+</head>
+<body>
+		<input type="text" value="" id="newName">
+		<button onclick="chck()">Current Status</button>
+		<button onclick="chck2()">How far?</button>
+</body>
+</html>
